@@ -16,18 +16,19 @@ class CreateProfilesTable extends Migration
         Schema::create('profiles', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('kid_id');
-            $table->unsignedBigInteger('education_id');
-            $table->unsignedBigInteger('religion_id');
-            $table->unsignedBigInteger('politic_id');
-            $table->string('sex');
-            $table->integer('age');
-            $table->float('height');
-            $table->string('work');
-            $table->string('job');
-            $table->string('school');
-            $table->unsignedBigInteger('drink_id');
-            $table->unsignedBigInteger('smoke_id');
+            $table->unsignedBigInteger('kid_id')->nullable();
+            $table->unsignedBigInteger('education_id')->nullable();
+            $table->unsignedBigInteger('religion_id')->nullable();
+            $table->unsignedBigInteger('politic_id')->nullable();
+            $table->string('sex')->nullable();
+            $table->integer('age')->nullable();
+            $table->unsignedBigInteger('height_id')->nullable();
+            $table->string('work')->nullable();
+            $table->string('job')->nullable();
+            $table->string('home_town')->nullable();
+            $table->string('school')->nullable();
+            $table->unsignedBigInteger('drink_id')->nullable();
+            $table->unsignedBigInteger('smoke_id')->nullable();
             $table->timestamps();
         });
 
@@ -40,6 +41,7 @@ class CreateProfilesTable extends Migration
             $table->foreign('politic_id')->references('id')->on('politics');
             $table->foreign('drink_id')->references('id')->on('drinks');
             $table->foreign('smoke_id')->references('id')->on('smokes');
+            $table->foreign('height_id')->references('id')->on('heights');
 
             
 

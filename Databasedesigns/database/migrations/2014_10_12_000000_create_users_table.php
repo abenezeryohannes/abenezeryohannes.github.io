@@ -18,8 +18,8 @@ class CreateUsersTable extends Migration
             $table->string('phone_number')->uniqie();
             $table->string('email')->unique()->nullable();
             $table->string('password')->nullable();
-            $table->string("first_name");
-            $table->string("last_name");
+            $table->string("first_name")->nullable();
+            $table->string("sex")->nullable();
             $table->string("facebook")->unique()->nullable();
             $table->string("instagram")->unique()->nullable();
             $table->rememberToken();

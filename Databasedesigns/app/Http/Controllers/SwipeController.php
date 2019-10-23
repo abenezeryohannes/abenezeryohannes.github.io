@@ -22,10 +22,25 @@ class SwipeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function swipeLeft(Request $request)
     {
-        //
+        $validatedUser = $request->validate([
+            'swiper_id' => 'required',
+            'swiped_id' => 'required'
+        ]);
+
+        $swipe = new Swipe();
+        $swipe->swiper_id = $request['swiper_id'];
+        $swipe->swiped_id = $request['swiped_id'];
+        $swipe->direction = "Left";
+        $swipe->save();
+
+        return response()->json( [
+            "status" => "successfull"
+        ]);
+
     }
+
 
     /**
      * Store a newly created resource in storage.

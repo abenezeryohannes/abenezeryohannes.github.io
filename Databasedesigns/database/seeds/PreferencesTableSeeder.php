@@ -20,8 +20,8 @@ class PreferencesTableSeeder extends Seeder
             $preference  = new Preference();
             $preference->user_id = $user->id;
             $preference->sex = $sex[rand(0, 2)];
-            $preference->min_height = (float) rand(160, 180) / 100;
-            $preference->max_height = (float) rand(180, 200) / 100;
+            $preference->min_height_id = rand(1, 19);
+            $preference->max_height_id = rand(20, 43);
             $preference->min_age =rand(18, 28);
             $preference->max_age = rand(28, 40);
             

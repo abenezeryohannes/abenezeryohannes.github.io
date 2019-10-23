@@ -16,8 +16,8 @@ class CreatePreferencesTable extends Migration
         Schema::create('preferences', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
-            $table->float('max_height');
-            $table->float('min_height');
+            $table->unsignedBigInteger('max_height_id');
+            $table->unsignedBigInteger('min_height_id');
             $table->integer('min_age');
             $table->integer('max_age');
             $table->string('sex');
@@ -44,6 +44,8 @@ class CreatePreferencesTable extends Migration
 
             $table->foreign('smoke_id')->references('id')->on('smokes');
             $table->foreign('drink_id')->references('id')->on('drinks');
+            $table->foreign('max_height_id')->references('id')->on('heights');
+            $table->foreign('min_height_id')->references('id')->on('heights');
             
         });
     }

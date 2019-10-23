@@ -18,13 +18,26 @@ class AnswaresTableSeeder extends Seeder
 
 
         foreach($users as $user){
-            $faker = new Faker();
+            
             $answare1 = new Answare();
             $answare1->user_id = $user->id;
             $answare1->question_id = rand(1, 30);
-            $answare1->answare = Str::random(10);
+            $answare1->text = Str::random(10);
             $answare1->save();
-        }
-        
+            
+            $answare2 = new Answare();
+            $answare2->user_id = $user->id;
+            $answare2->question_id = rand(1, 30);
+            $answare2->text = Str::random(10);
+            $answare2->save();
+            
+            $answare3 = new Answare();
+            $answare3->user_id = $user->id;
+            $answare3->question_id = rand(1, 30);
+            $answare3->text = Str::random(10);
+            $answare3->save();
+            
+   
+        }     
     }
 }

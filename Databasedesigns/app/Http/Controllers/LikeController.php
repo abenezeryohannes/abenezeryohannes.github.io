@@ -2,11 +2,24 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\LikePeopleResource\LikeResource;
 use App\Like;
+use App\Swipe;
+use App\User;
 use Illuminate\Http\Request;
 
 class LikeController extends Controller
 {
+    public function likers(Request $request){
+        $validatedUser = $request->validate([
+            'user_id' => 'required',
+        ]);
+
+        $likers = Like::Where('liked_user_id', '=', $request['user_id'])->get();
+        return LikeResource::collection($likers);
+    }
+
+
     /**
      * Display a listing of the resource.
      *
@@ -22,9 +35,34 @@ class LikeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function like(Request $request)
     {
-        //
+        $validatedUser = $request->validate([
+        'liker_id' => 'required',
+        'liked_id' => 'required',
+    ]);
+            if($request['answer_id'] == null && $request['picture_id']) response()->json( [
+                "status" => "un successfull"
+            ]);
+
+        $like = new Like();
+        $like->liker_user_id = $request['liker_id'];
+        $like->liked_user_id = $request['liked_id'];
+        
+        if(($request['picture_id']!=null))
+            $like->picture_id = $request['picture_id'];
+        
+        if($request['answer_id']!=null)
+            $like->answare_id = $request['answer_id'];
+
+        $like->notified = false;
+        $like->comment = $request['comment'];
+        $like->save();
+
+        return response()->json( [
+            "status" => "successfull"
+        ]);
+
     }
 
     /**

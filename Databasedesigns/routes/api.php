@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Http\Request;
-use App\Http\Resources\User as UserResources;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -19,42 +18,37 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/me', function (Request $request) {
-    return new UserResources( $request->user());
-})->middleware('auth:api');
+Route::post('/me', 'UserController@create')->middleware('auth:api');
 
 
 
+//Home Controller
+// find peoples
+Route::post('/findpeoples', "UserController@findPeoples");
+Route::post('/swipe_left', "SwipeController@swipeLeft");
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//Like Controller
+Route::post('/likers', "LikeController@likers");
+Route::post('/like', "LikeController@like");
 
 // signUp Users
 Route::post('/signup', "UserController@signUp");
+Route::get('/getvitalsstruct','UserController@getVgetVitalsStruct');
+Route::post('/submitVitals', 'userController@submitVitals');
+
+
+
 
 // list Users
 Route::get('users', function(){
         return new UserResource(user::findorfail(1));
 });
+
 // list single User
 Route::get('getusers/{id}', function($id){
     return UserResource(user::findorfail($id));
 });
+
 //create new User
 Route::post('postusers', 'UserController@store');
 //update User 

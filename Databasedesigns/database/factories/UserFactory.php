@@ -20,7 +20,7 @@ $factory->define(User::class, function (Faker $faker) {
     return [
         'phone_number' => $faker->phoneNumber,
         'first_name' => $faker->name,
-        'last_name' => $faker->name,
+        'sex' => rand(1, 2) == 1? "Man":"Woman",
         'facebook' => Str::random(20),
         'instagram' => Str::random(20), 
         'email_verified_at' => now(),

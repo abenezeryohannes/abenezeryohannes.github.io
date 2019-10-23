@@ -12,25 +12,27 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call(UserTableSeeder::class);
-        $this->call(KidsTableSeeder::class);
-         
-        $this->call(EducationsTableSeeder::class);
-        $this->call(LocationsTableSeeder::class);
-        $this->call(PoliticsTableSeeder::class);
-        $this->call(ReligionsTableSeeder::class);
+         $this->call(UserTableSeeder::class);
+         $this->call(KidsTableSeeder::class);
+         $this->call(HeightsTableSeeder::class);
 
-       $this->call(LanguagesTableSeeder::class);
-        $this->call(FamilyPlansTableSeeder::class);
-        $this->call(DrinksTableSeeder::class);
-        $this->call(SmokesTableSeeder::Class);
+         $this->call(EducationsTableSeeder::class);
+         $this->call(LocationsTableSeeder::class);
+         $this->call(PoliticsTableSeeder::class);
+         $this->call(ReligionsTableSeeder::class);
 
-        
-        $this->call(QuestionsTableSeeder::class);
-        $this->call(AnswaresTableSeeder::class);
-        $this->call(ProfilesTableSeeder::class);
-        $this->call(PreferencesTableSeeder::class);
-        $this->call(Language_PreferenceTableSeeder::class);
-        $this->call(Language_ProfileTableSeeder::class);
+
+         $this->call(FamilyPlansTableSeeder::class);
+         $this->call(DrinksTableSeeder::class);
+         $this->call(SmokesTableSeeder::Class);
+
+
+         $this->call(QuestionsTableSeeder::class);
+         $this->call(AnswaresTableSeeder::class);
+         $this->call(ProfilesTableSeeder::class);
+         $this->call(PreferencesTableSeeder::class);
+         $this->call(PicturesTableSeeder::class);
+         $this->call(LikesTableSeeder::class);
+
     }
 }

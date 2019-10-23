@@ -19,7 +19,7 @@ class ProfilesTableSeeder extends Seeder
             $profile  = new Profile();
             $profile->user_id = $user->id;
             $profile->sex = rand(1, 2) == 1? "Man":"Woman";
-            $profile->height = (float) rand(100, 200) / 100;
+            $profile->height_id =  rand(20, 43);
             
             $profile->kid_id = rand(1, 3);
             $profile->work = Str::random(10);

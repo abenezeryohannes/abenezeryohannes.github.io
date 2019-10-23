@@ -17,7 +17,7 @@ class CreateAnswaresTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('question_id');
             $table->unsignedBigInteger('user_id');
-            $table->string('answare');
+            $table->string('text');
             $table->timestamps();
         });
 
