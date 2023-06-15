@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer_container container">
-        <h1 className="footer_title">Smith</h1>
+        <h1 className="footer_title">Abenezer Yohannes</h1>
         <ul className="footer_list">
           <li>
             <a href="#about" className="footer_link">
@@ -27,7 +27,7 @@ const Footer = () => {
 
         <div className="footer_social">
           <a
-            href="https://instagram.com"
+            href="https://instagram.com/abenezr_yohannes"
             className="footer_social-link"
             target="_blank"
           >
@@ -35,15 +35,15 @@ const Footer = () => {
           </a>
 
           <a
-            href="https://dribbble.com"
+            href="https://linkedin.com/in/abenezeryohannes"
             className="footer_social-link"
             target="_blank"
           >
-            <i className="uil uil-dribbble"></i>
+            <i className="uil uil-linkedin"></i>
           </a>
 
           <a
-            href="https://github.com"
+            href="https://github.com/abenezeryohannes"
             className="footer_social-link"
             target="_blank"
           >
