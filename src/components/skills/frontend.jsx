@@ -9,7 +9,7 @@ const Frontend = () => {
                         <i class="bx bx-badge-check"></i>
                         
                         <div>
-                            <h3 className="skills_name">ReactJs</h3>
+                            <h3 className="skills_name">Flutter</h3>
                             <span className="skills_level">Expert</span>
                         </div>
                     </div>
@@ -27,7 +27,7 @@ const Frontend = () => {
                         <i class="bx bx-badge-check"></i>
                         
                         <div>
-                            <h3 className="skills_name">Flutter</h3>
+                            <h3 className="skills_name">ReactJs</h3>
                             <span className="skills_level">Expert</span>
                         </div>
                     </div>
