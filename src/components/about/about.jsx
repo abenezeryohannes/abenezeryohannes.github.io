@@ -14,7 +14,7 @@ const About = () => {
                 <div className="about_data">
                     <Info/>
                     <p className="about_description">
-                    React, Flutter and Nodejs developer, I create web pages with UI / UX user interface, I have years of experience and many clients are happy with the projects carried out.
+                    Flutterl, React and Nodejs developer, I create develop mobile and web apps with UI / UX user interface, I have years of experience and many clients are happy with the projects carried out.
                     </p>
                     <a download="" href={CV} className="button button-flex">Download CV {"  "} 
                     
