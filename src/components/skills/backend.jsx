@@ -37,7 +37,7 @@ const Backend = () => {
                     <i class="bx bx-badge-check"></i>
                     
                     <div>
-                        <h3 className="skills_name">MySQL</h3>
+                        <h3 className="skills_name">Laravel</h3>
                         <span className="skills_level">Expert</span>
                     </div>
                 </div>
